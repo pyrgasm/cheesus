@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@400;700&display=swap");
 html {
   scroll-behavior: smooth;
 }
@@ -5,9 +6,9 @@ html {
 body {
   margin: 0;
   font-family: "Asap", sans-serif;
-  background-color: rgb(245, 245, 245);
+  background-repeat: no-repeat;
   background-image: linear-gradient(180deg, rgb(150, 235, 70), rgb(20, 43, 6));
-  margin-bottom: 200px;
+  margin-bottom: 100px;
 }
 
 .header-box {
@@ -26,12 +27,10 @@ body {
   align-items: center;
   height: 90px;
 }
-.header-box header .logo {
+.header-box header .logo a {
   padding: 8px 15px;
   background-color: yellowgreen;
   border-radius: 10px;
-}
-.header-box header .logo a {
   font-size: 24px;
   font-weight: 500;
   color: black;
@@ -49,58 +48,78 @@ body {
   text-shadow: 0px 0px 10px rgb(153, 205, 50);
 }
 
-.container {
+.newCommentContainer {
   width: 1320px;
   margin: 0 auto;
-}
-.container .newComment {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 700px;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
+  min-height: 700px;
 }
-.container .newComment form {
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
-  padding: 40px 80px;
+.newCommentContainer .newCommentInfo {
+  flex: 1;
+  box-sizing: border-box;
+  background-color: greenyellow;
+  padding: 50px 80px;
+  border-radius: 35px;
+  margin: 0 0 0 50px;
+}
+.newCommentContainer .newCommentInfo p {
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+}
+.newCommentContainer .newComment {
+  margin: 0 50px 0;
+  flex: 2;
+}
+.newCommentContainer .newComment form {
+  box-shadow: 0px 0px 12px 6px rgba(153, 205, 50, 0.7);
+  padding: 50px 80px;
   background-color: greenyellow;
   border-radius: 35px;
 }
-.container .newComment form .comment #comment, .container .newComment form .name #name {
-  width: 400px;
+.newCommentContainer .newComment form .comment #comment, .newCommentContainer .newComment form .name #name {
+  width: 100%;
   height: 50px;
   margin-bottom: 25px;
-  border-radius: 20px;
+  border-radius: 17px;
   border: 0;
   text-align: center;
-  font-size: 16px;
+  font-size: 1rem;
   background-color: rgb(245, 245, 245);
-}
-.container .newComment form .comment #comment:hover, .container .newComment form .name #name:hover {
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
-}
-.container .newComment form .comment #comment:focus, .container .newComment form .name #name:focus {
   outline: none;
+  box-sizing: border-box;
+}
+.newCommentContainer .newComment form .comment #comment {
+  height: 100px;
+  padding: 15px;
+}
+.newCommentContainer .newComment form .comment #comment:hover, .newCommentContainer .newComment form .name #name:hover {
+  background-color: rgb(255, 255, 255);
+}
+.newCommentContainer .newComment form .comment #comment:focus, .newCommentContainer .newComment form .name #name:focus {
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
   background-color: white;
 }
-.container .newComment form input[type=button] {
+.newCommentContainer .newComment form input[type=submit] {
   margin-top: 30px;
-  width: 408px;
+  width: 100%;
   height: 80px;
-  border-radius: 20px;
+  border-radius: 17px;
   border: 0;
   background-color: rgb(245, 245, 245);
   font-size: 18px;
   font-weight: bold;
 }
-.container .newComment form input[type=button]:hover {
+.newCommentContainer .newComment form input[type=submit]:hover {
   background-color: white;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+}
+
+.container {
+  width: 1320px;
+  margin: 0 auto;
 }
 .container .commentBoard .info-text {
   padding: 20px 30px;
@@ -115,7 +134,7 @@ body {
   margin: 12px 0;
 }
 .container .commentBoard .info-text p {
-  font-size: 16px;
+  font-size: 1rem;
   margin: 12px 0;
 }
 .container .commentBoard .comments {
@@ -126,7 +145,7 @@ body {
   padding: 8px 8px;
   border-radius: 20px;
   margin-bottom: 45px;
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 20px 2px rgb(153, 205, 50);
 }
 .container .commentBoard .comments .comment .info {
   background-color: white;
@@ -135,13 +154,13 @@ body {
 }
 .container .commentBoard .comments .comment .info h3 {
   margin: 8px 0;
+  text-shadow: 2px 0px 10px rgb(153, 205, 50);
 }
 .container .commentBoard .comments .comment .info p {
   margin: 8px 0px;
 }
 .container .commentBoard .comments .comment .hidden-info {
   display: none;
-  background-color: greenyellow;
   justify-content: space-between;
 }
 .container .commentBoard .comments .comment .hidden-info .action, .container .commentBoard .comments .comment .hidden-info .stats {
@@ -168,8 +187,18 @@ body {
 label {
   display: block;
   margin-bottom: 8px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
+  pointer-events: none;
+}
+
+textarea, input {
+  font-size: inherit;
+  font-family: inherit;
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+          text-size-adjust: none;
+  resize: none;
 }
 
 .highlight {
@@ -181,27 +210,257 @@ a {
   color: white;
 }
 
+.aboutContainer {
+  width: 1320px;
+  margin: 0 auto;
+  display: flex;
+}
+.aboutContainer .info-card, .aboutContainer .info-card2 {
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
+  background-color: black;
+  color: white;
+  border-radius: 25px;
+  margin: 200px 0px 500px 0px;
+  padding: 20px 60px;
+}
+.aboutContainer .info-card h1, .aboutContainer .info-card2 h1 {
+  font-size: 3rem;
+}
+.aboutContainer .info-card p, .aboutContainer .info-card2 p {
+  margin-top: 0;
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+}
+.aboutContainer .info-card:hover, .aboutContainer .info-card2:hover {
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+}
+.aboutContainer .info-card {
+  margin-right: 50px;
+}
+
+.contactContainer {
+  width: 1320px;
+  height: 2000px;
+  margin: 0 auto;
+}
+.contactContainer .info-card {
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
+  background-color: black;
+  color: white;
+  border-radius: 25px;
+  margin: 200px 0px 500px 0px;
+  padding: 20px 60px;
+}
+.contactContainer .info-card h1 {
+  font-size: 3rem;
+}
+.contactContainer .info-card p {
+  margin-top: 0;
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+}
+.contactContainer .info-card p button, .contactContainer .info-card p a {
+  background-color: black;
+  color: greenyellow;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  text-shadow: 0px 0px 10px rgb(153, 205, 50);
+  transition: all 0.7s ease;
+}
+.contactContainer .info-card p button:active {
+  text-shadow: none;
+  color: rgb(157, 233, 42);
+  transition: none;
+  transform: scale(95%);
+}
+.contactContainer .info-card:hover {
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.rewardContainer {
+  width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 750px;
+  align-items: center;
+}
+.rewardContainer .reward {
+  background-color: black;
+  border-radius: 35px;
+  padding: 20px 60px;
+  color: greenyellow;
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
+}
+.rewardContainer .reward h1 {
+  font-size: 3rem;
+}
+.rewardContainer .reward p {
+  font-size: 1.5rem;
+}
+.rewardContainer .reward .couponCodeContainer {
+  display: flex;
+  justify-content: center;
+}
+.rewardContainer .reward .couponCodeContainer .couponCode {
+  background-color: greenyellow;
+  border-radius: 20px;
+  padding: 20px 40px;
+}
+.rewardContainer .reward .couponCodeContainer .couponCode p {
+  font-weight: bold;
+  margin: 0;
+  color: black;
+  font-size: 5rem;
+}
+
 @media (max-width: 1350px) {
   .header-box header {
     width: 1200px;
   }
+  .newCommentContainer {
+    width: 1200px;
+  }
   .container {
     width: 1200px;
+  }
+  .aboutContainer {
+    width: 1200px;
+  }
+  .aboutContainer .info-card h1, .aboutContainer .info-card2 h1 {
+    font-size: 2rem;
+  }
+  .aboutContainer .info-card p, .aboutContainer .info-card2 p {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
   }
 }
 @media (max-width: 1250px) {
   .header-box header {
     width: 1000px;
   }
+  .newCommentContainer {
+    width: 1000px;
+  }
+  .newCommentContainer .newCommentInfo p {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
   .container {
+    width: 1000px;
+  }
+  .aboutContainer {
     width: 1000px;
   }
 }
 @media only screen and (max-width: 768px) {
-  body {
-    background-color: aquamarine;
+  .header-box header {
+    width: 100%;
   }
-  nav {
+  .header-box header .logo {
+    margin-left: 20px;
+  }
+  .header-box header nav {
     display: none;
+  }
+  .aboutContainer {
+    width: 100%;
+  }
+  .aboutContainer .info-card h1, .aboutContainer .info-card2 h1 {
+    font-size: 2rem;
+  }
+  .aboutContainer .info-card p, .aboutContainer .info-card2 p {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
+  .newCommentContainer {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .newCommentContainer .newCommentInfo {
+    padding: 25px 35px;
+    margin: 25px 20px 12px 20px;
+  }
+  .newCommentContainer .newCommentInfo h1 {
+    margin: 0;
+  }
+  .newCommentContainer .newCommentInfo p {
+    margin: 0;
+    margin-top: 15px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  .newCommentContainer .newComment {
+    margin: 12px 20px 10px 20px;
+    min-width: 80%;
+  }
+  .newCommentContainer .newComment form {
+    padding: 25px 35px;
+  }
+  .newCommentContainer .newComment form input[type=submit] {
+    margin-top: 20px;
+  }
+  .newCommentContainer .newComment form input[type=submit]:active {
+    background-color: white;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  .container {
+    width: 100%;
+  }
+  .container .commentBoard {
+    margin-top: 75px;
+  }
+  .container .commentBoard .info-text {
+    padding: 25px 35px;
+    margin: 30px 20px;
+  }
+  .container .commentBoard .info-text h1 {
+    margin: 0 0 15px 0;
+  }
+  .container .commentBoard .info-text p {
+    margin: 0;
+  }
+  .container .commentBoard .comments {
+    margin-top: 20px;
+  }
+  .container .commentBoard .comments .comment {
+    margin: 0 20px 45px 20px;
+  }
+  .rewardContainer {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 750px;
+    align-items: center;
+  }
+  .rewardContainer .reward {
+    margin: 30px 20px;
+    padding: 25px 35px;
+  }
+  .rewardContainer .reward h1 {
+    font-size: 2rem;
+    margin: 0 0 25px 0;
+  }
+  .rewardContainer .reward p {
+    margin: 0 0 25px 0;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+  }
+  .rewardContainer .reward .couponCodeContainer {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+  }
+  .rewardContainer .reward .couponCodeContainer .couponCode {
+    border-radius: 17px;
+    padding: 5px 10px;
+  }
+  .rewardContainer .reward .couponCodeContainer .couponCode p {
+    margin: 0;
+    font-size: 1.65rem;
   }
 }/*# sourceMappingURL=style.css.map */

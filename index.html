@@ -6,40 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;700&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <div class="header-box">
         <header>
 
             <div class="logo">
-                <a href="#home">Index.Social</a>
+                <a href="index.html#home">Index.Social</a>
             </div>
     
             <nav>
                 <a href="#comments">Comments</a>
-                <a href="#">Contact</a>
-                <a href="#">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="about.html">About</a>
             </nav>
     
         </header>
     </div>
-    <div id="home" class="container">
+    <div id="home" class="newCommentContainer">
+        <div class="newCommentInfo">
+            <h1>McDonalds Exploit for free coupons</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus quos laboriosam eius libero voluptas ullam odio?</p>
+        </div>
         <div class="newComment">
             <form action="">
                 <div class="name">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" placeholder="John Doe">
+                    <input name="Name" type="text" id="name" placeholder="John Doe">
                 </div>
                 <div class="comment">
-                    <label for="name">Comment:</label>
-                    <input type="text" id="comment" placeholder="Best cheesy">
+                    <label for="comment">Comment:</label>
+                    <textarea name="Comment" id="comment" spellcheck="false" placeholder="Best Cheesyy"></textarea>
                 </div>
-                <input type="button" value="Post">
+                <input type="submit" value="Post">
             </form>
         </div>
+    </div>
+    <div id="home" class="container">
         <div id="comments" class="commentBoard">
             <div class="info-text">
                 <h1>Best of the best Cheesers</h1>
